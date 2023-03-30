@@ -1,4 +1,32 @@
 /*main*/
+#main {
+  padding-top: 52px;
+  background-image: linear-gradient(-180deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%); }
+  #main header {
+    position: fixed;
+    width: 100%;
+    height: 52px;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    color: white; }
+    #main header h2 {
+      margin: 0; }
+    #main header .sns_wrap {
+      position: absolute;
+      right: 5%;
+      top: 0;
+      height: 52px;
+      display: inline-flex;
+      align-items: center; }
+      #main header .sns_wrap a {
+        text-decoration: none;
+        color: white;
+        font-size: 24px;
+        margin-left: 16px; }
+  #main .about_me {
+    position: relative; }
+
 .browser_wrap {
   max-width: 1000px;
   padding-bottom: 56.25%;
@@ -60,4 +88,5 @@
       flex: 1 1; }
   .browser_wrap .contents {
     background-color: white;
-    overflow: auto; }
+    overflow: auto;
+    flex: 1 1; }
