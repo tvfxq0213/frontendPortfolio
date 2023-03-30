@@ -1,47 +1,50 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-  th:with="lang=${#locale.language}" th:lang="${lang}" >
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  th:with="lang=${#locale.language}" th:lang="${lang}">
+
 <head th:fragment="head" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
-    
+
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="keywords" content="">
   <meta name="author" content="">
-  <link rel="stylesheet" href="./css/main.css" >
-
-
+  <link rel="stylesheet" href="./css/main.css">
 
   <title>Narae's Portfolio</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400" media="all">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400"
+    media="all">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-<!-- 스크립트 -->
+  <!-- 스크립트 -->
   <script src="./js/i18n.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
 
 </head>
+
 <body>
+  <div data-include-path="./header.html"></div>
+
   <article id="main">
-    <header class="d-flex align-items-center justify-content-center">
-      <h2>NARAE</h2>
-      <div class="sns_wrap">
-        <a href="https://github.com/tvfxq0213/frontendPortfolio" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="" target="_blank"><i class="bi bi-file-earmark-person"></i></a>
-      </div>
-    </header>
+
     <section class="about_me">
       <div class="tite_img_wrap">
         <h1>
-          Hello, I am Jang Narae, <br/>
-          a web front-end developer.<br/>
+          Hello, I am Jang Narae, <br />
+          a web front-end developer.<br />
           Welcome to this page.
         </h1>
         <!--
@@ -52,26 +55,31 @@
         </h1>
       -->
       </div>
+    </section>
+    <section class="skills">
+      <h3 class="">Skills</h3>
+      <p>HTML, CSS, Javascript, SCSS, jQuery, React.js, vue.js,<br />
+        Node.js(Express), Java(Spring Boot), PHP(Laravel, Wordpress), Ruby(Ruby on rails)
+      </p>
 
-      <div class="skills">
-        <h3 class="">Skills</h3>
-        <p>HTML, CSS, Javascript, SCSS, jQuery, React.js, vue.js,<br/>
-          Node.js(Express), Java(Spring Boot), PHP(Laravel, Wordpress), Ruby(Ruby on rails)
-        </p>
-      </div>
+    </section>
 
+    <section class="works">
       <ul class="project">
         <li>Company Project</li>
 
         <li>Toy Project</li>
 
       </ul>
+
     </section>
+
+    
     <section class="about_project">
-  
+
       <div class="container">
         <div class="browser_wrap">
-      
+
           <div class="browser">
             <div class="browser_tab d-flex ">
               <span class="red circle"></span>
@@ -100,19 +108,12 @@
               여기는 브라우저 콘텐츠 내용이 들어가는 곳
             </div>
           </div>
-      
+
         </div>
       </div>
     </section>
   </article>
-
-  <script>
-    window.addEventListener('load', ()=> {
-      i18n.getLang();
-    })
-
-  </script>
- 
-  
+  <script src="./js/common.js"></script>
 </body>
+
 </html>

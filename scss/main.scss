@@ -1,7 +1,7 @@
 /*main*/
 #main{
   padding-top:52px;
-  background-image: linear-gradient(-180deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%);
+  //background-image: linear-gradient(-180deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%);
 
   header{
     position: fixed;
@@ -13,6 +13,9 @@
     color:white;
     h2{
       margin:0;
+      img{
+        height:40px;
+      }
     }
     .sns_wrap{
       position:absolute;
