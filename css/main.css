@@ -18,7 +18,7 @@
   font-style: normal; }
 
 html, body {
-  font-family: 'GmarketSans'; }
+  font-family: 'Roboto', 'GmarketSans'; }
 
 header {
   position: fixed;
@@ -28,12 +28,14 @@ header {
   top: 0;
   z-index: 999;
   color: white; }
-  header h2 {
-    margin: 0; }
+  header h1 {
+    margin: 0;
+    color: #353535;
+    -webkit-text-stroke: 1px #353535; }
   header img {
     height: 40px; }
   header a {
-    color: white;
+    color: #353535;
     text-decoration: none;
     font-size: 16px;
     font-weight: 300; }
@@ -46,15 +48,30 @@ header {
     align-items: center; }
     header .sns_wrap a {
       text-decoration: none;
-      color: white;
+      color: #353535;
       font-size: 24px;
       margin-left: 16px; }
 
-#main {
-  padding-top: 52px;
-  background-image: linear-gradient(-180deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%); }
-  #main .about_me {
-    position: relative; }
+.text-basicColor {
+  color: #353535; }
+
+.text-beige {
+  color: #fffaf2; }
+
+article {
+  background-color: #fffaf2; }
+
+#main h1 {
+  font-weight: 900; }
+
+#main .display-1.text-uppsercase {
+  -webkit-text-stroke: 1px #353535; }
+
+#main .about_title {
+  min-height: 100vh;
+  position: relative; }
+  #main .about_title h1.text-uppercase {
+    -webkit-text-stroke: 2px #353535; }
 
 .browser_wrap {
   max-width: 1000px;

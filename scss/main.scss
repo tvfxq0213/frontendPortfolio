@@ -18,8 +18,18 @@
   font-style: normal;
 }
 
+//$mainColor : #0a1128;
+$textColor:#353535;
+$beigeColor:#fffaf2;
+$redColor:#f0122d;
+$yelloColor:#facc43;
+$navyColor: #001964;
+$blueColor:#0092c0;
+$whiteColor: white;
+
+
 html,body{
-  font-family: 'GmarketSans';
+  font-family: 'Roboto', 'GmarketSans';
 }
 header{
   position: fixed;
@@ -28,16 +38,18 @@ header{
   left:0;
   top:0;
   z-index:999;
-  color:white;
-  h2{
+  color:$whiteColor;
+  h1{
     margin:0;
-    
+    color:$textColor;
+    -webkit-text-stroke: 1px $textColor;
+
   }
   img{
     height:40px;
   }
   a{
-    color:white;
+    color:$textColor;
     text-decoration: none;
     font-size:16px;
     font-weight:300;
@@ -52,19 +64,45 @@ header{
     align-items: center;
     a{
       text-decoration: none;
-      color:white;
+      color:$textColor;
       font-size:24px;
       margin-left:16px;
     }
   }
 }
+.text-basicColor{
+  color:$textColor;
+}
+.text-beige{
+  color:$beigeColor
+}
+article{
+  background-color: $beigeColor;
+}
 #main{
-  padding-top:52px;
-  background-image: linear-gradient(-180deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%);
-
-  
-  .about_me{
+  //padding-top:52px;
+  //background-image: linear-gradient(-180deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%);
+  h1{
+    font-weight:900;
+  }
+  .display-1.text-uppsercase{
+    -webkit-text-stroke: 1px $textColor;
+  }
+  .about_title{
+    min-height:100vh;
     position:relative;
+    //background-color:;
+    h1{
+      &.text-uppercase{
+        -webkit-text-stroke: 2px $textColor;
+      }
+    }
+  }
+  .about_me{
+
+  }
+  .qualification{
+
   }
 }
 .browser_wrap{
