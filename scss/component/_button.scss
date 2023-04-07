@@ -1,0 +1,149 @@
+//Color 
+$textColor:#353535;
+$beigeColor:#fffaf2;
+$redColor:#f0122d;
+$yellowColor:#facc43;
+$navyColor: #001964;
+$blueColor:#0092c0;
+$whiteColor: white;
+
+
+button, 
+input[type="button"]{
+  background-color:white;
+}
+
+.btn{
+  text-decoration: none;
+  border-radius: 0px;
+  
+  &.btn-size-md{
+    padding:8px 32px;
+  }
+
+  &.btn-default{
+    color:white;
+    background-color: $textColor;
+    border:1px solid $textColor;
+    &:hover,
+    &:active,
+    &:focus{
+      background:#000;
+      border-color:#000;
+    }
+  }
+
+  &.btn-default-outline{
+    color:$textColor;
+    background-color: transparent;
+    border:1px solid $textColor;
+    &:hover,
+    &:active,
+    &:focus{
+      background:$textColor;
+      color:white;
+      opacity: 0.8;
+    }
+  }
+
+  &.btn-red{
+    color:white;
+    background-color: $redColor;
+    border:1px solid $redColor;
+    &:hover,
+    &:active,
+    &:focus{
+      background:darken($redColor, 10%);
+      border-color:darken($redColor, 10%)
+    }
+  }
+
+  &.btn-red-outline{
+    color:$redColor;
+    background-color: transparent;
+    border:1px solid $redColor;
+    &:hover,
+    &:active,
+    &:focus{
+      background:$redColor;
+      color:white;
+      opacity: 0.8;
+    }
+  }
+
+  &.btn-yellow{
+    color:$textColor;
+    background-color: $yellowColor;
+    border:1px solid $yellowColor;
+    &:hover,
+    &:active,
+    &:focus{
+      background:darken($yellowColor, 10%);
+      border-color:darken($yellowColor, 10%)
+    }
+  }
+
+  &.btn-yellow-outline{
+    color:$yellowColor;
+    background-color: transparent;
+    border:1px solid $yellowColor;
+    &:hover,
+    &:active,
+    &:focus{
+      background:$yellowColor;
+      color:white;
+      opacity: 0.8;
+    }
+  }
+
+  &.btn-blue{
+    color:white;
+    background-color: $blueColor;
+    border:1px solid $blueColor;
+    &:hover,
+    &:active,
+    &:focus{
+      background:darken($blueColor, 10%);
+      border-color:darken($blueColor, 10%)
+    }
+  }
+
+  &.btn-blue-outline{
+    color:$blueColor;
+    background-color: transparent;
+    border:1px solid $blueColor;
+    &:hover,
+    &:active,
+    &:focus{
+      background:$blueColor;
+      color:white;
+      opacity: 0.8;
+    }
+  }
+
+  &.btn-beige{
+    color:$textColor;
+    background-color: $beigeColor;
+    border:1px solid $beigeColor;
+    &:hover,
+    &:active,
+    &:focus{
+      background:darken($beigeColor, 10%);
+      border-color:darken($beigeColor, 10%)
+    }
+  }
+
+  &.btn-beige-outline{
+    color:$beigeColor;
+    background-color: transparent;
+    border:1px solid $beigeColor;
+    &:hover,
+    &:active,
+    &:focus{
+      background:$beigeColor;
+      color:$textColor;
+      opacity: 0.8;
+    }
+  }
+  
+}
