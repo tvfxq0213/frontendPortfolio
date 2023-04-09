@@ -131,6 +131,7 @@ article {
   bottom: 30px;
   z-index: 11;
   font-size:36px;
+  color:$beigeColor;
   -webkit-animation: action 1s infinite alternate;
   animation: action 1s infinite alternate;
 }
@@ -190,29 +191,65 @@ article {
   }
 
   .typed-cursor {
-    color: $textColor;
-    font-size: 4rem;
+    color: $beigeColor;
+    font-weight:100;
   }
 
   .about_title {
     min-height: 100vh;
     position: relative;
+    background:$textColor;
+    color:$beigeColor;
 
     //background-color:;
     h1 {
       .text-uppercase {
-        -webkit-text-stroke: 2px $textColor; 
+        -webkit-text-stroke: 2px $beigeColor; 
       }
     }
   }
 
-  .about_me {}
+  .about_me {
+    padding-top:80px;
+    padding-bottom:100px;
 
-  .qualification {}
+    .img-wrap{
+     
+      width:100%;
+      height:auto;
+      position: relative;
+      overflow: hidden;
+      &:after{
+        display:block;
+        padding-bottom:100%;
+        content: "";
+      }
+      .profile_img{
+        position: absolute;
+        left: 0;
+        top: -33%;
+        
+      }
+    }
+    h6{
+      margin-bottom:0;
+      a{
+        color:$blueColor;
+      }
+    }
+    
+  }
+
+  .qualification {
+    padding-top:80px;
+    padding-bottom:100px;
+  }
   
   
   
   .portfolio {
+    padding-top:80px;
+    padding-bottom:100px;
     .portfolio_container{
       display:grid;
 
