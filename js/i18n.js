@@ -1,6 +1,6 @@
 const i18n = {
-  allowLang: ["ko", "en"],
-  defaultLang: "ko",
+  allowLang: ["kr", "en"],
+  defaultLang: "kr",
   langPath: "/js/lang/",
 
   getLang() {
@@ -14,10 +14,9 @@ const i18n = {
 
   dropdownTxtSetting(lang){
     let el = document.querySelector(".dropdown.lang");
-
-    let item =  document.querySelectorAll(".dropdown.lang .dropdown-item");
+    let item =  document.querySelectorAll(".lang .dropdown-menu li");
     if(item.length > 0){
-      el.children[0].innerHTML = `<i class="bi bi-globe2 me-2"></i>${lang.toUpperCase()}`;
+      el.children[0].innerHTML = `${lang.toUpperCase()}`;
     }
     item.forEach(function(element) {
       if(element.innerText.toLowerCase() == lang ){
@@ -57,7 +56,7 @@ const i18n = {
     if (!i18nLangs) { return; }
     // 쿠키에 언어 저장
     localStorage.setItem("lang", this.getLang());
-    //this.dropdownTxtSetting(this.getLang());
+    this.dropdownTxtSetting(this.getLang());
     document.querySelectorAll("[data-i18n]").forEach(function (element) {
       if (!i18nLangs[element.dataset.i18n]) {
         return;

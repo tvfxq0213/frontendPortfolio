@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
   th:with="lang=${#locale.language}" th:lang="${lang}">
 
-<head th:fragment="head" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head  prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
 
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
@@ -16,14 +16,12 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/main.css">
 
   <!-- 스크립트 -->
-  <script src="./js/i18n.js"></script>
 
   <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
 
@@ -33,6 +31,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
     integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
     crossorigin="anonymous"></script>
+
+  <script src="./js/i18n.js"></script>
 
 </head>
 
@@ -45,13 +45,13 @@
         <div class="row align-items-center">
           
           <div class="col-lg-12 text-center text-md-start">
-            <h1 class="display-3 mb-0">Hello,<br />
+            <h1 class="display-3 mb-0" data-i18n="title_text">Hello,<br />
               I'm <span class="text-uppercase text-basicColor">JANG NARAE</span><br />
               <span class="typed-text-output d-inline  "></span>
               <span class="typed-text d-none ">Web Publisher, Front End Developer, Web Developer</span>
             </h1>
             <div class="d-flex align-items-center justify-content-center justify-content-lg-start mt-5">
-              <a href="" class="btn btn-blue mr-5  btn-size-md">Download Resume</a>
+              <a href="" class="btn btn-blue mr-5  btn-size-md" data-i18n="Download_resume">Download Resume</a>
             </div>
           </div>
         </div>
@@ -64,43 +64,49 @@
           <h1 class="position-absolute text-uppercase text-blue">About Me</h1>
         </div>
         <div class="row align-items-center">
-          <div class="col-lg-5 pb-4 pb-lg-0 order-1 order-lg-2">
-            <div class="img-wrap">
-              <img class="img-fluid profile_img" src="" alt="">
-            </div>
+          <div class="col-lg-4 pb-4 pb-lg-0 order-1 order-lg-2">
+            <img class="img-fluid profile_img" src="/image/profile_img.png" alt="">
            
           </div>
-          <div class="col-lg-7 order-2 order-lg-1">
-            <h3 class="mb-4">Web Front-end Developer</h3>
-            <p>I want to create an attractive and usable website that can remain in people's memories.
+          <div class="col-lg-8 order-2 order-lg-1">
+            <h3 class="mb-4" data-i18n="about_title">Web Front-end Developer</h3>
+            <p class="mb-3" data-i18n="about_p">I want to create an attractive and usable website that can remain in people's memories.
             </p>
             <div class="row mb-3">
               <div class="col-sm-6 py-2">
-                <h6>Name: <span class="fw-normal">Jang Narae</span></h6>
+                <label data-i18n="name">Name</label>
+                <p data-i18n="name_txt">Jang Narae</p>
+               
               </div>
               <div class="col-sm-6 py-2">
-                <h6>Birthday: <span class="fw-normal">12 February 1992</span></h6>
+                <label data-i18n="birthday">Birthday</label>
+                <p data-i18n="birthday_txt">12 February 1992</p>
               </div>
               <div class="col-sm-6 py-2">
-                <h6>Degree: <span class="fw-normal">Bachelor</span></h6>
+                <label data-i18n="degree">Degree</label>
+                <p data-i18n="degree_txt">Bachelor</p>
               </div>
               <div class="col-sm-6 py-2">
-                <h6>Experience: <span class="fw-normal">8 Years 3 months</span></h6>
+                <label data-i18n="experience">Experience</label>
+                <p data-i18n="experience_txt">8 Years 3 months</p>
               </div>
               <div class="col-sm-6 py-2">
-                <h6>Hobby: <span class="fw-normal">Reading (<a href="https://www.instagram.com/hane_record_books/" target="_blank">Instagram</a>, <a href="https://hane-j.tistory.com/" target="_blank">Blog</a>), 
-                  Making Hanbok</span></h6>
+                <label data-i18n="hobby">Hobby</label>
+                <p data-i18n="hobby_txt">Reading ( <a href="https://www.instagram.com/hane_record_books/" class="text-decoration-none" target="_blank"><i class="bi bi-instagram"></i></a> , <a href="https://hane-j.tistory.com/" class="text-decoration-none" target="_blank"><i class="icon-tistory"></i></a> ) <br/>
+                  Making Hanbok</p>
               </div>
       
               <div class="col-sm-6 py-2">
-                <h6>Email: <a href="mailto:jjaing1313@gmail.com" class="fw-normal">jjaing1313@gmail.com</a></h6>
+                <label data-i18n="email">Email</label>
+                <p><a href="mailto:jjaing1313@gmail.com" class="fw-normal text-blue" data-i18n="email_txt">jjaing1313@gmail.com</a></p>
               </div>
               <div class="col-sm-6 py-2">
-                <h6>Address: <span class="fw-normal">Seoul, South Korea</span></h6>
+                <label data-i18n="address">Address</label>
+                <p data-i18n="address_txt">Seoul, South Korea</p>
               </div>
              
             </div>
-            <a href="" class="btn btn-blue-outline btn-size-md">Learn More <i class="ms-2 bi bi-arrow-right"></i></a>
+            <a href="" class="btn btn-blue-outline btn-size-md"><span data-i18n="learn_more">Learn More</span> <i class="ms-2 bi bi-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -111,56 +117,56 @@
     <section class="container-fluid py-5 qualification">
       <div class="container">
         <div class="position-relative d-flex align-items-center justify-content-center mb-5">
-          <h1 class=" text-uppercase text-stroke-gray">Quality</h1>
+          <h1 class="text-uppercase text-stroke-gray">Quality</h1>
           <h1 class="position-absolute text-uppercase text-blue">Education & Expericence</h1>
         </div>
         <div class="row align-items-start">
 
           <div class="col-lg-6">
-            <h3 class="mb-4">My Expericence</h3>
+            <h3 class="mb-4" data-i18n="my_experience">My Expericence</h3>
             <div class="border-left border-primary pt-2 ps-4 ms-2">
               <div class="position-relative mb-4">
                 <i class="bi bi-building  position-absolute" style="top: 2px; left: -32px;"></i>
-                <h5 class="font-weight-bold mb-1">Web Publisher</h5>
-                <p class="mb-2"><strong>Sandoll</strong> | <small>2020.04 ~ now</small></p>
-                <p>Development of UI such as andollCloud Website, CloudBridge Webview (Win, Mac, iOS)
+                <h5 class="font-weight-bold mb-1" data-i18n="webpublisher">Web Publisher</h5>
+                <p class="mb-2"><strong data-i18n="company01">Sandoll</strong> | <small>2020.04 ~ now</small></p>
+                <p data-i18n="company01_txt">Development of UI such as andollCloud Website, CloudBridge Webview (Win, Mac, iOS)
                   Sandoll Recruit Website and SandollCloud Admin
                   </p>
               </div>
               <div class="position-relative mb-4">
                 <i class="bi bi-building  position-absolute" style="top: 2px; left: -32px;"></i>
-                <h5 class="font-weight-bold mb-1">Web Front-end Developer</h5>
-                <p class="mb-2"><strong>Starship Vending machine</strong> | <small>2017.09 ~ 2020.03</small></p>
-                <p>Development of web front-end such as PUFF, PUFF Studio, PUFF Admin, PUFF Payment Webview, PUFF GAME and PUFF AD ADMIN 
+                <h5 class="font-weight-bold mb-1" data-i18n="webfrontenddeveploer">Web Front-end Developer</h5>
+                <p class="mb-2"><strong data-i18n="company02">Starship Vending machine</strong> | <small>2017.09 ~ 2020.03</small></p>
+                <p data-i18n="company02_txt">Development of web front-end such as PUFF, PUFF Studio, PUFF Admin, PUFF Payment Webview, PUFF GAME and PUFF AD ADMIN 
                 </p>
               </div>
               <div class="position-relative mb-4">
                 <i class="bi bi-building  position-absolute" style="top: 2px; left: -32px;"></i>
-                <h5 class="font-weight-bold mb-1">Web Front-end Developer</h5>
-                <p class="mb-2"><strong>Eqqui / Lexcode</strong> | <small>2015.11 ~ 2017.04</small></p>
-                <p>Development of web front-end such as EQQUI(26 languages), EQQUI Admin, Lexcode Kr Hompage and Lexcode PH Hompage 
+                <h5 class="font-weight-bold mb-1" data-i18n="webfrontenddeveploer">Web Front-end Developer</h5>
+                <p class="mb-2"><strong data-i18n="company03">Eqqui / Lexcode</strong> | <small>2015.11 ~ 2017.04</small></p>
+                <p data-i18n="company03_txt">Development of web front-end such as EQQUI(26 languages), EQQUI Admin, Lexcode Kr Hompage and Lexcode PH Hompage 
                 </p>
               </div>
               <div class="position-relative mb-4">
                 <i class="bi bi-building  position-absolute" style="top: 2px; left: -32px;"></i>
-                <h5 class="font-weight-bold mb-1">Web Developer</h5>
-                <p class="mb-2"><strong>Wonyoung Crebiz</strong> | <small>2014.08 ~ 2015.08</small></p>
-                <p>Web development such as 1204 design internet, 1204 design, Florista, etc.
+                <h5 class="font-weight-bold mb-1" data-i18n="webdeveloper">Web Developer</h5>
+                <p class="mb-2"><strong data-i18n="company04">Wonyoung Crebiz</strong> | <small>2014.08 ~ 2015.08</small></p>
+                <p data-i18n="company04_txt">Web development such as 1204 design internet, 1204 design, Florista, etc.
                 </p>
               </div>
             </div>
           </div>
           <div class="col-lg-6">
-            <h3 class="mb-4">My Education</h3>
+            <h3 class="mb-4" data-i18n="my_education">My Education</h3>
             <div class="border-left border-primary pt-2 ps-4 ms-2">
               <div class="position-relative mb-4">
                 <i class="bi bi-book  position-absolute" style="top: 2px; left: -32px;"></i>
-                <h5 class="font-weight-bold mb-1">Bachelor of Engineering in Computer Science</h5>
-                <p class="mb-2"><strong>Korea University</strong> | <small>2010 - 2015</small></p>
+                <h5 class="font-weight-bold mb-1" data-i18n="edu01">Bachelor of Engineering in Computer Science</h5>
+                <p class="mb-2"><strong data-i18n="edu01_1">Korea University</strong> | <small>2010 - 2015</small></p>
               </div>
               <div class="position-relative mb-4">
                 <i class="bi bi-book  position-absolute" style="top: 2px; left: -32px;"></i>
-                <p class="mb-2"><strong>Gwang-ju Dongsin Girls' High School</strong> | <small>2007 - 2010</small></p>
+                <p class="mb-2"><strong data-i18n="edu02">Gwang-ju Dongsin Girls' High School</strong> | <small>2007 - 2010</small></p>
 
               </div>
             </div>
@@ -173,7 +179,8 @@
       <div class="position-relative d-flex align-items-center justify-content-center mb-5">
         <h1 class=" text-uppercase text-stroke-gray">Portfolio</h1>
         <h1 class="position-absolute text-uppercase text-blue">Portfolio</h1>
-      </div><div class="px-0 py-0 portfolio_container">
+      </div>
+      <div class="px-0 py-0 portfolio_container">
         <!-- single work -->
         <div class="item-1  fashion logo">
           <a href="" class="portfolio_item">
@@ -304,33 +311,17 @@
     <a href="#" class="btn btn-default-outline px-0 back-to-top"><i class="bi bi-chevron-double-up"></i></a>
 
   </article>
+  <div data-include-path="./footer.html"></div>
 
   <script src="./js/common.js"></script>
 
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script type="text/javascript">
-    function sendEmail() {
-      Email.send({
-        Host: "smtp.gmail.com",
-        Username: "sender@email_address.com",
-        Password: "Enter your password",
-        To: 'receiver@email_address.com',
-        From: "sender@email_address.com",
-        Subject: "Sending Email using javascript",
-        Body: "Well that was easy!!",
-        Attachments: [
-          {
-            name: "File_Name_with_Extension",
-            path: "Full Path of the file"
-          }]
-      })
-        .then(function (message) {
-          alert("Mail has been sent successfully")
-        });
-    }
+    
   </script>
   <script>
     window.addEventListener('load', () => {
+
       // Typed Initiate
       if (document.querySelectorAll('.typed-text-output').length == 1) {
         var typed_strings = document.querySelector('.typed-text').innerText;
@@ -349,15 +340,18 @@
       let aboutHeight = document.querySelector('.about_title').offsetHeight;
       if (scroll > 200) {
         document.querySelector('.scroll-to-bottom').classList.remove('opacity-100');
-
-      } else {
-        document.querySelector('.scroll-to-bottom').classList.add('opacity-100');
-
-      }
-      if (scroll > 300) {
         document.querySelector('.back-to-top').classList.add('opacity-100');
       } else {
+        document.querySelector('.scroll-to-bottom').classList.add('opacity-100');
         document.querySelector('.back-to-top').classList.remove('opacity-100');
+      }
+    
+
+      if(scroll > aboutHeight){
+        document.querySelector('header').classList.add('scroll');
+      }else{
+        document.querySelector('header').classList.remove('scroll');
+
       }
     })
 
