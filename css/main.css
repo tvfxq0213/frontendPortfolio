@@ -17,6 +17,36 @@
   font-weight: bold;
   font-style: normal; }
 
+@-webkit-keyframes action {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(-15px); } }
+
+@keyframes action {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(-15px); } }
+
+@-webkit-keyframes actionX {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(8px); } }
+
+@keyframes actionX {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(8px); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 button,
 input[type="button"] {
   background-color: white; }
@@ -24,6 +54,8 @@ input[type="button"] {
 .btn {
   text-decoration: none;
   border-radius: 0px; }
+  .btn .bi-arrow-right:before {
+    animation: actionX 1s infinite alternate; }
   .btn.btn-size-md {
     padding: 8px 32px; }
   .btn.btn-default {
@@ -156,15 +188,25 @@ header {
     color: #fffaf2;
     text-decoration: none;
     font-size: 16px;
-    font-weight: 400; }
-    header a:hover:not(button), header button:hover:not(button) {
-      color: #fffaf2;
-      text-decoration: underline;
-      text-underline-position: under; }
-    header a.active:not(button), header a:active:not(button), header button.active:not(button), header button:active:not(button) {
-      color: #fffaf2;
-      text-decoration: underline;
-      text-underline-position: under; }
+    font-weight: 400;
+    position: relative; }
+    header a::before, header button::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      border-radius: 4px;
+      background-color: #fffaf2;
+      bottom: -2px;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform .3s ease-in-out; }
+    header a:hover:not(button)::before, header button:hover:not(button)::before {
+      transform-origin: left;
+      transform: scaleX(1); }
+    header a:hover:not(button), header a.active:not(button), header a:active:not(button), header button:hover:not(button), header button.active:not(button), header button:active:not(button) {
+      color: #fffaf2; }
     header a i, header button i {
       color: #fffaf2;
       font-size: 24px; }
@@ -174,9 +216,13 @@ header {
       color: #353535; }
       header.scroll a i, header.scroll button i {
         color: #353535; }
-      header.scroll a:hover:not(button), header.scroll button:hover:not(button) {
-        color: #353535; }
-      header.scroll a.active:not(button), header.scroll a:active:not(button), header.scroll button.active:not(button), header.scroll button:active:not(button) {
+      header.scroll a::before, header.scroll button::before {
+        content: '';
+        background-color: #353535; }
+      header.scroll a:hover:not(button)::before, header.scroll button:hover:not(button)::before {
+        transform-origin: left;
+        transform: scaleX(1); }
+      header.scroll a:hover:not(button), header.scroll a.active:not(button), header.scroll a:active:not(button), header.scroll button:hover:not(button), header.scroll button.active:not(button), header.scroll button:active:not(button) {
         color: #353535; }
     header.scroll h1 {
       color: #353535; }
@@ -244,24 +290,6 @@ article {
   z-index: 11;
   -webkit-animation: action 1s infinite alternate;
   animation: action 1s infinite alternate; }
-
-@-webkit-keyframes action {
-  0% {
-    transform: translateY(0); }
-  100% {
-    transform: translateY(-15px); } }
-
-@keyframes action {
-  0% {
-    transform: translateY(0); }
-  100% {
-    transform: translateY(-15px); } }
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
 
 #main h1 {
   font-weight: 900; }
