@@ -1,0 +1,49 @@
+@-webkit-keyframes action {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes action {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+@-webkit-keyframes actionX {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes actionX {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

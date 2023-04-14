@@ -9,6 +9,12 @@ input[type="button"]{
   text-decoration: none;
   border-radius: 0px;
   
+  .bi-arrow-right{
+    &:before{
+      animation: actionX 1s infinite alternate;
+    }
+
+  }
   &.btn-size-md{
     padding:8px 32px;
   }

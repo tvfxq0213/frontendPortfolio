@@ -29,6 +29,8 @@ input[type="button"] {
 .btn {
   text-decoration: none;
   border-radius: 0px; }
+  .btn .bi-arrow-right:before {
+    animation: actionX 1s infinite alternate; }
   .btn.btn-size-md {
     padding: 8px 32px; }
   .btn.btn-default {
