@@ -140,6 +140,12 @@ footer{
 }
 .text-blue{
   color:$blueColor;
+  
+}
+a.text-blue{
+  &:hover{ 
+    color:darken($blueColor, 10%)
+  }
 }
 
 .text-stroke-gray {
@@ -257,6 +263,7 @@ article {
     p{
       margin-bottom:0;
       a{
+        vertical-align: middle;
         i{
           color:$textColor;
         }

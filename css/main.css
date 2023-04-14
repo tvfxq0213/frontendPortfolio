@@ -206,6 +206,9 @@ footer {
 .text-blue {
   color: #0092c0; }
 
+a.text-blue:hover {
+  color: #006b8d; }
+
 .text-stroke-gray {
   font-size: calc(2.125rem + 8vw);
   -webkit-text-stroke: 1px #dee2e6;
@@ -287,8 +290,10 @@ article {
     color: #686868; }
   #main .about_me p {
     margin-bottom: 0; }
-    #main .about_me p a i {
-      color: #353535; }
+    #main .about_me p a {
+      vertical-align: middle; }
+      #main .about_me p a i {
+        color: #353535; }
 
 #main .qualification {
   padding-top: 80px;

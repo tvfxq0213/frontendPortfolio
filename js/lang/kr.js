@@ -19,7 +19,7 @@ const i18nLangs = {
   experience :'경력',
   experience_txt: '8년 3개월',
   hobby:'취미',
-  hobby_txt:'독서( <a href="https://www.instagram.com/hane_record_books/" class="text-decoration-none" target="_blank"><i class="bi bi-instagram"></i></a> , <a href="https://hane-j.tistory.com/" class="text-decoration-none" target="_blank"><i class="icon-tistory"></i></a> ) <br/>한복짓기',
+  hobby_txt:'독서 <a href="https://www.instagram.com/hane_record_books/" class="text-decoration-none" target="_blank"><i class="bi bi-instagram"></i></a> <a href="https://hane-j.tistory.com/" class="text-decoration-none" target="_blank"><i class="icon-tistory"></i></a> <br/>한복짓기',
   email : '이메일',
   email_txt: 'jjaing1313@gmail.com',
   address : '거주',

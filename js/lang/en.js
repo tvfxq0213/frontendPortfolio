@@ -15,7 +15,7 @@ const i18nLangs = {
   experience :'Experience',
   experience_txt: '8 Years 3 months',
   hobby:'Hobby',
-  hobby_txt:'Reading ( <a href="https://www.instagram.com/hane_record_books/" class="text-decoration-none" target="_blank"><i class="bi bi-instagram"></i></a> , <a href="https://hane-j.tistory.com/" class="text-decoration-none" target="_blank"><i class="icon-tistory"></i></a> ) <br/>Making Hanbok',
+  hobby_txt:'Reading  <a href="https://www.instagram.com/hane_record_books/" class="text-decoration-none" target="_blank"><i class="bi bi-instagram"></i></a> <a href="https://hane-j.tistory.com/" class="text-decoration-none" target="_blank"><i class="icon-tistory"></i></a>  <br/>Making Hanbok',
   email : 'Email',
   email_txt: 'jjaing1313@gmail.com',
   address : 'Address',
