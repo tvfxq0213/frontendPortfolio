@@ -39,7 +39,7 @@ const i18nLangs = {
   my_education: 'My Education',
   edu01 : 'Bachelor of Engineering in Computer Science',
   edu01_1 : 'Korea University',
-  edu02 :'Gwang-ju Dongsin Girls\' High School'
+  edu02 :'Gwang-ju Dongsin Girls\' High School',
 
 
 }
