@@ -1,0 +1,66 @@
+/* mbti */
+
+#mbti{
+  height:100vh;
+  article{
+    height:100%;
+   &#qna{
+     display: none;
+   } 
+   &#result{
+     display:none;
+   }
+  }
+
+  .qBox{
+    text-align:center;
+    background-color: transparent;
+  
+  }
+
+  .answerList{
+    display:block;
+    width:100%;
+    margin-bottom: 16px;
+
+  }
+  .status{
+    height:10px;
+    width:100%;
+    background-color:white;
+  }
+  .statusBar{
+    height:100%;
+    background-color: red;
+  }
+}
+
+.fadeIn{
+  animation: fadeIn;
+  animation-duration: 0.5s;
+}
+
+.fadeOut{
+  animation: fadeOut;
+  animation-duration: 0.5s;
+}
+
+@keyframes mbti_fadeIn {
+  from { opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes mbti_fadeOut {
+  from { opacity: 1}
+  to {opacity: 0}
+}
+
+@-webkit-keyframes mbti_fadeIn {
+  from { opacity: 0}
+  to {opacity: 1}
+}
+
+@-webkit-keyframes mbti_fadeOut {
+  from { opacity: 1}
+  to {opacity: 0}
+}

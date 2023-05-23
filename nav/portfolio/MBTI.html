@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MBTI</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+    <script src="/js/data.js"></script>
+
+</head>
+
+<body id="mbti">
+  <article id="main">
+    <div class="container text-center py-5">
+      <h3>십이간지로 알아보는 연애유형</h3>
+      <img class="d-block w-50 mx-auto" src="" alt="대표이미지" title="대표이미지" />
+      <p>
+        대충 텍스트가 들어가는 영역입니다 :) 
+      </p>
+      <button type="button" onclick="javascript:begin();" class="btn btn-outline-danger mt-3">시작하기</button>
+    </div>
+  </article>
+  <article id="qna">
+    <div class="status my-4">
+      <div class="statusBar">
+
+      </div>
+    </div>
+    <div class="container">
+      <div class="qBox py-3">
+
+      </div>
+      <div class="answerBox">
+
+      </div>
+    </div>
+  
+  </article>
+  <article id="result">
+    <div class="container">
+      RESULT
+    </div>
+  </article>
+</body>
+
+<script charset="utf-8">
+  console.log(qnaList);
+  const main = document.querySelector('#main');
+  const qna = document.querySelector('#qna');
+  const result = document.querySelector('#result');
+  const endPoint = qnaList.length;
+  const select = [0,0,0,0,0,0,0,0,0,0,0,0];
+
+  function setResult(){
+    let point = calResult();
+    const resultName = document.querySelector('.resultname');
+    resultName.innerHTML = infoList[point].name;
+
+    var resultImg = document.createElement('img');
+    const imgDiv = document.querySelector('#resultImg');
+    var imgURL = 'img/image-' + point + '.png';
+    resultImg.src = imgURL;
+    resultImg.alt = point;
+    resultImg.classList.add('img-fluid');
+    imgDiv.appendChild(resultImg);
+
+    const resultDesc = document.querySelector('.resultDesc');
+    resultDesc.innerHTML = infoList[point].desc;
+    
+  }
+  
+  function calResult(){
+    console.log(select);
+    var result = select.indexOf(Math.max(...select)); // 배열의 최대값을 갖고 있는 인덱스를 반환
+    return result;
+  }
+
+  function goResult(){
+    qna.style.WebkitAnimation= "mbti_fadeOut 1s";
+    qna.style.animation= "mbti_fadeOut 1s";
+
+  
+    setTimeout(()=>{
+      result.style.WebkitAnimation= "mbti_fadeIn 1s";
+      result.style.animation= "mbti_fadeIn 1s";
+      setTimeout(()=>{
+        qna.style.display="none";
+        result.style.display= "block";
+      }, 450)
+      console.log(select);
+    }, 500);
+    setResult();
+  }
+
+  function addAnswer(answerText, qIdx, idx ){
+    var a = document.querySelector('.answerBox');
+    var answer = document.createElement('button');
+    answer.classList.add('answerList');
+    answer.classList.add('btn');
+    answer.classList.add('btn-default-outline');
+    answer.classList.add('fadeIn');
+
+    a.appendChild(answer);
+    answer.innerHTML = answerText;
+
+    answer.addEventListener("click", ()=>{
+      var children = document.querySelectorAll(".answerList");
+
+      for(let i =0; i < children.length; i++){
+        children[i].disabled = true;
+        children[i].style.WebkitAnimation = "fadeOut 0.5s";
+        children[i].style.animation = "fadeIn 0.5s";
+      }
+
+      setTimeout(()=>{
+        var target = qnaList[i].a[idx];
+        for(let j=0 ; j< target.type.length; j++){
+          select[target[i]] += 1;
+        }
+        for(let i =0; i < children.length; i++){
+          children[i].style.display = 'none';
+        }
+        goNext(++qIdx);
+      }, 950)
+
+    }, false)
+  }
+  function goNext(qIdx){
+
+    if(qIdx === endPoint){
+      goResult();
+      return;
+    }
+
+    var q = document.querySelector('.qBox');
+    q.innerHTML = qnaList[qIdx].q;
+
+    for(let i in qnaList[qIdx].a){
+      addAnswer(qnaList[qIdx].a[i].answer, qIdx, 1);
+    }
+
+    var status = document.querySelector('.statusBar');
+    status.style.width = (100/endPoint) *  (qIdx+1) +'%'
+  }
+
+  function begin(){
+    main.style.WebkitAnimation= "mbti_fadeOut 1s";
+    main.style.animation= "mbti_fadeOut 1s";
+
+  
+    setTimeout(()=>{
+      qna.style.WebkitAnimation= "mbti_fadeIn 1s";
+      qna.style.animation= "mbti_fadeIn 1s";
+      setTimeout(()=>{
+        main.style.display="none";
+        qna.style.display= "block";
+      }, 450)
+      let qIdx = 0;
+      goNext(qIdx);
+    }, 500)
+
+  }
+</script>
+
+</html>
